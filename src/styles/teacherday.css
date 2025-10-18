@@ -1,0 +1,143 @@
+.teacherday-text-container {
+  display: inline-block;
+  position: relative;
+  padding: 20px;
+}
+
+.teacherday-text {
+  display: inline-block;
+  font-weight: bold;
+  font-family: 'Georgia', serif;
+  background: linear-gradient(
+    135deg,
+    #1e3a8a 0%,
+    #3b82f6 25%,
+    #60a5fa 50%,
+    #3b82f6 75%,
+    #1e3a8a 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: teacherday-wisdom 4s ease-in-out infinite;
+  position: relative;
+  text-shadow:
+    2px 2px 4px rgba(30, 58, 138, 0.3);
+  letter-spacing: 0.05em;
+}
+
+.teacherday-text::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(59, 130, 246, 0.2),
+    transparent
+  );
+  animation: teacherday-highlight 3s ease-in-out infinite;
+  z-index: -1;
+}
+
+.teacherday-decorations {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.book {
+  position: absolute;
+  top: -10px;
+  left: -30px;
+  font-size: 24px;
+  animation: teacherday-float-book 3s ease-in-out infinite;
+}
+
+.apple {
+  position: absolute;
+  top: -10px;
+  right: -30px;
+  font-size: 24px;
+  animation: teacherday-float-apple 2.5s ease-in-out infinite;
+}
+
+.star {
+  position: absolute;
+  font-size: 16px;
+  animation: teacherday-twinkle 2s ease-in-out infinite;
+}
+
+.star-1 {
+  top: -20px;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.star-2 {
+  top: -15px;
+  left: 50%;
+  animation-delay: 0.7s;
+}
+
+.star-3 {
+  top: -20px;
+  right: 20%;
+  animation-delay: 1.4s;
+}
+
+@keyframes teacherday-wisdom {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes teacherday-highlight {
+  0%, 100% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(100%);
+  }
+}
+
+@keyframes teacherday-float-book {
+  0%, 100% {
+    transform: translateY(0) rotate(-5deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+}
+
+@keyframes teacherday-float-apple {
+  0%, 100% {
+    transform: translateY(0) rotate(5deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(-5deg);
+  }
+}
+
+@keyframes teacherday-twinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+}

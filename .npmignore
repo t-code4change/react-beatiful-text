@@ -1,0 +1,44 @@
+# Source files
+src/
+tsconfig.json
+tsup.config.ts
+
+# Tests
+__tests__/
+*.test.ts
+*.test.tsx
+jest.config.js
+jest.setup.js
+__mocks__/
+
+# Example app
+example/
+
+# Build tools
+.idea/
+.vscode/
+
+# Documentation (keep README.md in package)
+DEPLOYMENT_GUIDE.md
+DEPLOY_README.txt
+NEW_EFFECTS_SUMMARY.md
+NPM_PUBLISHING_GUIDE.md
+UNIFIED_COMPONENT_UPDATE.md
+USAGE_EXAMPLES.md
+
+# Scripts
+deploy.sh
+quick-deploy.sh
+
+# Git
+.git/
+.gitignore
+
+# Dependencies
+node_modules/
+pnpm-lock.yaml
+package-lock.json
+
+# Misc
+.DS_Store
+*.log

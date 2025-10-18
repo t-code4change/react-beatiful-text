@@ -1,0 +1,87 @@
+.retro-text-container {
+  display: inline-block;
+  position: relative;
+  perspective: 500px;
+}
+
+.retro-text {
+  display: inline-block;
+  font-weight: bold;
+  background: linear-gradient(
+    180deg,
+    #ff00ff 0%,
+    #ff1493 25%,
+    #ff69b4 50%,
+    #00ffff 75%,
+    #00bfff 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow:
+    3px 3px 0 #ff00ff,
+    6px 6px 0 #00ffff;
+  position: relative;
+  transform: rotateX(-10deg) rotateY(5deg);
+  animation: retro-wave 3s ease-in-out infinite;
+}
+
+.retro-text::before {
+  content: attr(data-text);
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  z-index: -1;
+  background: linear-gradient(
+    180deg,
+    #ff1493 0%,
+    #ff69b4 50%,
+    #00bfff 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0.5;
+}
+
+.retro-text::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 100%;
+  height: 10px;
+  background: repeating-linear-gradient(
+    90deg,
+    #ff00ff 0px,
+    #ff00ff 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  opacity: 0.6;
+  animation: retro-scan 2s linear infinite;
+}
+
+@keyframes retro-wave {
+  0%, 100% {
+    transform: rotateX(-10deg) rotateY(5deg) translateY(0);
+  }
+  50% {
+    transform: rotateX(-10deg) rotateY(-5deg) translateY(-5px);
+  }
+}
+
+@keyframes retro-scan {
+  0% {
+    transform: scaleX(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scaleX(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 0.6;
+  }
+}
