@@ -1,0 +1,78 @@
+.spotlight-neon {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    filter: brightness(200%);
+}
+
+.spotlight-text {
+    background: linear-gradient(
+        45deg,
+        #ff00ff,
+        #00ffff,
+        #ffff00,
+        #ff4500,
+        #ff00ff
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    font-weight: bold;
+    position: relative;
+    user-select: none;
+    animation: gradient-shift 3s ease infinite;
+}
+
+.spotlight-text::before {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: linear-gradient(
+        45deg,
+        #ff00ff,
+        #00ffff,
+        #ffff00,
+        #ff4500,
+        #ff00ff
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    filter: blur(0.02em);
+    mix-blend-mode: screen;
+    animation: gradient-shift 3s ease infinite;
+}
+
+.spotlight-overlay {
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.8),
+        transparent 25%
+    ) center / 25% 25%;
+    animation: spotlight-move 5s linear infinite;
+    mix-blend-mode: color-dodge;
+    pointer-events: none;
+}
+
+@keyframes spotlight-move {
+    to {
+        transform: translate(50%, 50%);
+    }
+}
+
+@keyframes gradient-shift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}

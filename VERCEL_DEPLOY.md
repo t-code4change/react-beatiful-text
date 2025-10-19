@@ -1,29 +1,70 @@
 # Deploy Example App to Vercel
 
-This guide explains how to deploy the example app to Vercel.
+This guide explains how to deploy the example app to Vercel using the terminal.
 
-## Prerequisites
+## Quick Start (Terminal Deployment)
 
-1. Install Vercel CLI globally:
+### Step 1: Install Vercel CLI
+
 ```bash
 npm install -g vercel
 ```
 
-2. Login to Vercel:
+### Step 2: Navigate to Example Directory
+
 ```bash
-vercel login
+cd example
 ```
 
-## Deploy Steps
+### Step 3: Install Dependencies
 
-### Option 1: Deploy via CLI
-
-1. Navigate to the project root:
 ```bash
-cd /Users/tuanpham/MyLife/Code4Change/react-beatiful-text
+npm install
 ```
 
-2. Run Vercel deploy:
+### Step 4: Build the Project
+
+```bash
+npm run build
+```
+
+### Step 5: Deploy to Vercel
+
+```bash
+vercel --yes
+```
+
+**That's it!** Your app will be deployed to Vercel.
+
+---
+
+## Detailed Instructions
+
+### Option 1: Deploy via Terminal (Recommended for Quick Deploy)
+
+1. **Install Vercel CLI** (if not already installed):
+```bash
+npm install -g vercel
+```
+
+2. **Navigate to example directory**:
+```bash
+cd example
+```
+
+3. **Install dependencies**:
+```bash
+npm install
+```
+
+4. **Build locally** (optional, to test):
+```bash
+npm run build
+```
+
+5. **Deploy to Vercel**:
+
+For first-time deployment:
 ```bash
 vercel
 ```
@@ -31,12 +72,17 @@ vercel
 Follow the prompts:
 - Set up and deploy? **Y**
 - Which scope? Select your account
-- Link to existing project? **N**
-- What's your project's name? **react-beautiful-text-example**
-- In which directory is your code located? **./example**
+- Link to existing project? **N** (or Y if updating existing)
+- What's your project's name? **react-beautiful-text** (or your preferred name)
+- In which directory is your code located? **./** (already in example dir)
 - Want to override the settings? **N**
 
-3. For production deployment:
+For quick deployment (skip prompts):
+```bash
+vercel --yes
+```
+
+For production deployment:
 ```bash
 vercel --prod
 ```

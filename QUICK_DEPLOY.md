@@ -1,33 +1,86 @@
 # Quick Deploy Guide - React Beautiful Text Example
 
-## 🚀 Deploy to Vercel (Easiest Method)
+## 🚀 Deploy to Vercel via Terminal
 
-### Step 1: Login to Vercel CLI
+### 📦 Example is Standalone
+
+The example app contains its own copy of the library code in `example/lib/beautiful-text/`.
+This makes it completely standalone and ready to deploy independently.
+
+### Quick Commands (Copy & Paste)
 
 ```bash
-vercel login
+# Navigate to example directory
+cd example
+
+# Install dependencies
+npm install
+
+# Build to test locally
+npm run build
+
+# Deploy to Vercel
+npm install -g vercel
+vercel --yes
 ```
 
-This will open your browser. Follow the login process.
+**That's it!** You'll get a demo URL like: `https://example-xxx.vercel.app`
 
-### Step 2: Deploy
+---
 
-From the project root directory:
+## 🔄 Syncing Latest Changes
 
+If you made changes to the library source code (`src/`) and want to update the example:
+
+```bash
+# From project root
+./sync-example.sh
+
+# Then rebuild and redeploy
+cd example
+npm run build
+vercel --yes
+```
+
+### Detailed Steps
+
+#### Step 1: Install Vercel CLI
+
+```bash
+npm install -g vercel
+```
+
+#### Step 2: Navigate to Example Directory
+
+```bash
+cd example
+```
+
+#### Step 3: Install Dependencies
+
+```bash
+npm install
+```
+
+#### Step 4: Build the Project
+
+```bash
+npm run build
+```
+
+#### Step 5: Deploy
+
+First deployment (with prompts):
 ```bash
 vercel
 ```
 
-Answer the prompts:
-- **Set up and deploy?** → Yes
-- **Which scope?** → Select your account
-- **Link to existing project?** → No
-- **What's your project's name?** → react-beautiful-text-example (or any name)
-- **In which directory is your code located?** → `./example`
-- **Want to override settings?** → No
+Quick deployment (skip prompts):
+```bash
+vercel --yes
+```
 
-### Step 3: Deploy to Production
-
+Production deployment:
 ```bash
 vercel --prod
 ```

@@ -4,16 +4,22 @@ A collection of beautiful, animated text components for React applications. Crea
 
 Perfect for events, celebrations, lucky draws, and special occasions.
 
+## 🎨 [Live Demo](https://react-beatiful-text-41mdc11zw-tuanphaits-projects.vercel.app/)
+
+Check out all effects in action: **[https://react-beatiful-text-41mdc11zw-tuanphaits-projects.vercel.app/](https://react-beatiful-text-41mdc11zw-tuanphaits-projects.vercel.app/)**
+
+Try different effects, customize text, font size, and font family. View and copy the code for any configuration!
+
 ## Features
 
-- 14 unique text animation styles
-- Two usage methods: Individual components or unified component
-- TypeScript support
-- Easy to use with select options
-- Customizable styling
-- Lightweight
-- No external dependencies beyond React
-- Perfect for events, celebrations, and special occasions
+- 🎨 16 unique text animation styles
+- 🔄 Two usage methods: Individual components or unified component
+- 📘 TypeScript support
+- 🎯 Easy to use with select options
+- 🎨 Customizable styling
+- ⚡ Lightweight
+- 🚀 No external dependencies beyond React
+- 🎉 Perfect for events, celebrations, and special occasions
 
 ## Installation
 
@@ -95,12 +101,14 @@ function App() {
 8. **retro** - 80s retro style with perspective
 9. **gold** - Luxurious 3D gold with shine effect
 10. **luxury** - Elegant luxury style with metallic finish
+11. **freestyle** - Colorful animated rectangles sliding within text
+12. **glowsparks** - Sparkling particles emanating from glowing text with fireworks
 
 ### Event & Celebration Effects
-11. **birthday** - Colorful birthday text with confetti
-12. **womanday** - Pink feminine style with floating flowers
-13. **teacherday** - Academic style with books and stars
-14. **party** - Festive party lights and sparkles
+13. **birthday** - Colorful birthday text with confetti
+14. **womanday** - Pink feminine style with floating flowers
+15. **teacherday** - Academic style with books and stars
+16. **party** - Festive party lights and sparkles
 
 ## Utility Functions
 

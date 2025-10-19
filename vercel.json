@@ -1,3 +1,6 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json"
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "npm run build:skip-tests && cd example && npm install --legacy-peer-deps && npm run build",
+  "installCommand": "npm install",
+  "outputDirectory": "example/.next"
 }

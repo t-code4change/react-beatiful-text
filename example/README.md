@@ -1,113 +1,431 @@
-# React Beautiful Text - Example Application
+# React Beautiful Text
 
-This is a Next.js example application demonstrating the usage of `react-beautiful-text` library.
+A collection of beautiful, animated text components for React applications. Create stunning text effects with minimal effort!
 
-## 🎨 Features
+Perfect for events, celebrations, lucky draws, and special occasions.
 
-- Interactive text effect previews
-- Real-time text customization
-- Font size adjustment
-- 14 stunning text effects:
-  - Neon Text - Flickering neon lights
-  - ShowGirl Text - Theatrical animation
-  - Glowing Text - Pulsing glow effect
-  - Spotlight Text - Animated spotlight
-  - Gradient Text - Smooth gradients
-  - Curved Loop Text - Interactive curved text
-  - Fire Text - Burning flames
-  - Retro 80s Text - Retro style
-  - 3D Gold Text - Luxury gold
-  - Luxury Text - Elegant metallic
-  - Birthday Text - Celebration theme
-  - Woman Day Text - Pink & feminine
-  - Teacher Day Text - Academic style
-  - Party Text - Festive lights
+## 🎨 [Live Demo](https://react-beatiful-text-41mdc11zw-tuanphaits-projects.vercel.app/)
 
-## 🚀 Quick Start
+Check out all effects in action: **[https://react-beatiful-text-41mdc11zw-tuanphaits-projects.vercel.app/](https://react-beatiful-text-41mdc11zw-tuanphaits-projects.vercel.app/)**
 
-### Install Dependencies
+Try different effects, customize text, font size, and font family. View and copy the code for any configuration!
 
-```bash
-npm install --legacy-peer-deps
-```
+## Features
 
-### Run Development Server
+- 🎨 16 unique text animation styles
+- 🔄 Two usage methods: Individual components or unified component
+- 📘 TypeScript support
+- 🎯 Easy to use with select options
+- 🎨 Customizable styling
+- ⚡ Lightweight
+- 🚀 No external dependencies beyond React
+- 🎉 Perfect for events, celebrations, and special occasions
 
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser.
-
-### Build for Production
-
-```bash
-npm run build
-npm run start
-```
-
-## 📦 Project Structure
-
-```
-example/
-├── app/              # Next.js app directory
-│   ├── layout.tsx    # Root layout with fonts
-│   ├── page.tsx      # Main page
-│   └── globals.css   # Global styles
-├── components/       # React components
-│   ├── font-preview.tsx   # Effect preview
-│   └── rich-text-toolbar.tsx  # Control toolbar
-├── lib/              # Utilities
-│   └── store.tsx     # Font state management
-├── styles/           # CSS for text effects
-└── package.json      # Dependencies
-```
-
-## 🔗 Using the Library
-
-This example imports the library as a local dependency:
-
-```json
-{
-  "dependencies": {
-    "react-beautiful-text": "file:.."
-  }
-}
-```
-
-In production, use the npm package:
+## Installation
 
 ```bash
 npm install react-beautiful-text
 ```
 
-Then import:
+or
+
+```bash
+yarn add react-beautiful-text
+```
+
+## Usage Methods
+
+### Method 1: Unified Component (Recommended)
+
+Use the `BeautifulText` component with effect names. Perfect for dynamic effect selection with dropdowns.
 
 ```tsx
-import { NeonText, GradientText } from "react-beautiful-text";
+import { BeautifulText, getAllEffects } from 'react-beautiful-text';
 
-<NeonText text="Hello World" style={{ fontSize: "48px" }} />
+function App() {
+  const [effect, setEffect] = useState('neon');
+  const effects = getAllEffects();
+
+  return (
+    <div>
+      {/* Select dropdown for effect switching */}
+      <select value={effect} onChange={(e) => setEffect(e.target.value)}>
+        {effects.map((effectName) => (
+          <option key={effectName} value={effectName}>
+            {effectName}
+          </option>
+        ))}
+      </select>
+
+      {/* Single component with dynamic effect */}
+      <BeautifulText
+        text="LUCK4YOU"
+        effect={effect}
+        style={{ fontSize: '80px' }}
+      />
+    </div>
+  );
+}
 ```
 
-## 🌐 Deploy to Vercel
+### Method 2: Individual Components
 
-See [QUICK_DEPLOY.md](../QUICK_DEPLOY.md) for deployment instructions.
+Import and use specific components directly.
 
-Quick deploy:
-```bash
-vercel login
-vercel
-vercel --prod
+```tsx
+import { NeonText, FireText, GoldText } from 'react-beautiful-text';
+
+function App() {
+  return (
+    <div>
+      <NeonText text="LUCK4YOU" style={{ fontSize: '80px' }} />
+      <FireText text="LUCK4YOU" style={{ fontSize: '80px' }} />
+      <GoldText text="LUCK4YOU" style={{ fontSize: '80px' }} />
+    </div>
+  );
+}
 ```
 
-## 🛠 Tech Stack
+## All Available Effects
 
-- **Framework**: Next.js 15.2.4
-- **React**: 19.2.0
-- **Styling**: Tailwind CSS 4.1.9
-- **Fonts**: Geist, Be Vietnam Pro
-- **Analytics**: Vercel Analytics
+### Basic Effects
+1. **neon** - Flickering neon effect with random colors
+2. **gradient** - Smooth animated gradient
+3. **showgirl** - Theatrical showgirl-style animation
+4. **glowing** - Pulsing glow effect
+5. **spotlight** - Animated spotlight beam
+6. **curved** - Interactive curved marquee text
 
-## 📝 Note
+### Special Effects
+7. **fire** - Burning fire effect with flickering flames
+8. **retro** - 80s retro style with perspective
+9. **gold** - Luxurious 3D gold with shine effect
+10. **luxury** - Elegant luxury style with metallic finish
+11. **freestyle** - Colorful animated rectangles sliding within text
+12. **glowsparks** - Sparkling particles emanating from glowing text with fireworks
 
-This example application is separate from the main library and is not included in the npm package. It serves as a demonstration and testing environment for the library components.
+### Event & Celebration Effects
+13. **birthday** - Colorful birthday text with confetti
+14. **womanday** - Pink feminine style with floating flowers
+15. **teacherday** - Academic style with books and stars
+16. **party** - Festive party lights and sparkles
+
+## Utility Functions
+
+### getAllEffects()
+
+Get all available effect names as an array.
+
+```tsx
+import { getAllEffects } from 'react-beautiful-text';
+
+const effects = getAllEffects();
+// Returns: ['neon', 'gradient', 'showgirl', 'glowing', ...]
+```
+
+### getAllEffectsInfo()
+
+Get detailed information about all effects.
+
+```tsx
+import { getAllEffectsInfo } from 'react-beautiful-text';
+
+const effectsInfo = getAllEffectsInfo();
+// Returns array of: { name, label, description, category }
+```
+
+### getEffectsByCategory()
+
+Get effects filtered by category.
+
+```tsx
+import { getEffectsByCategory } from 'react-beautiful-text';
+
+const basicEffects = getEffectsByCategory('basic');
+const specialEffects = getEffectsByCategory('special');
+const eventEffects = getEffectsByCategory('event');
+```
+
+### getEffectInfo()
+
+Get information about a specific effect.
+
+```tsx
+import { getEffectInfo } from 'react-beautiful-text';
+
+const info = getEffectInfo('neon');
+// Returns: { name: 'neon', label: 'Neon', description: '...', category: 'basic' }
+```
+
+## Complete Examples
+
+### Example 1: Effect Selector with Dropdown
+
+```tsx
+import React, { useState } from 'react';
+import { BeautifulText, getAllEffectsInfo } from 'react-beautiful-text';
+
+function EffectSelector() {
+  const [selectedEffect, setSelectedEffect] = useState('gold');
+  const [text, setText] = useState('LUCK4YOU');
+  const [fontSize, setFontSize] = useState(80);
+
+  const effects = getAllEffectsInfo();
+
+  return (
+    <div>
+      <div>
+        <input
+          type="text"
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          placeholder="Enter text"
+        />
+
+        <input
+          type="number"
+          value={fontSize}
+          onChange={(e) => setFontSize(Number(e.target.value))}
+          min={20}
+          max={200}
+        />
+
+        <select
+          value={selectedEffect}
+          onChange={(e) => setSelectedEffect(e.target.value)}
+        >
+          {effects.map((effect) => (
+            <option key={effect.name} value={effect.name}>
+              {effect.label} - {effect.description}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <BeautifulText
+        text={text}
+        effect={selectedEffect}
+        style={{ fontSize: `${fontSize}px` }}
+      />
+    </div>
+  );
+}
+```
+
+### Example 2: Category-Based Selection
+
+```tsx
+import { BeautifulText, getEffectsByCategory } from 'react-beautiful-text';
+
+function CategorySelector() {
+  const [effect, setEffect] = useState('party');
+  const eventEffects = getEffectsByCategory('event');
+
+  return (
+    <div>
+      <h2>Event Effects</h2>
+      {eventEffects.map((effectInfo) => (
+        <button
+          key={effectInfo.name}
+          onClick={() => setEffect(effectInfo.name)}
+        >
+          {effectInfo.label}
+        </button>
+      ))}
+
+      <BeautifulText
+        text="LUCK4YOU"
+        effect={effect}
+        style={{ fontSize: '100px' }}
+      />
+    </div>
+  );
+}
+```
+
+### Example 3: Lucky Draw Application
+
+```tsx
+import { BeautifulText } from 'react-beautiful-text';
+
+function LuckyDraw() {
+  const [winner, setWinner] = useState('');
+  const [isDrawing, setIsDrawing] = useState(false);
+
+  const drawWinner = () => {
+    setIsDrawing(true);
+    // Simulate drawing
+    setTimeout(() => {
+      setWinner('WINNER #123');
+      setIsDrawing(false);
+    }, 3000);
+  };
+
+  return (
+    <div>
+      <button onClick={drawWinner}>Draw Winner</button>
+
+      {isDrawing ? (
+        <BeautifulText
+          text="DRAWING..."
+          effect="fire"
+          style={{ fontSize: '120px' }}
+        />
+      ) : winner ? (
+        <BeautifulText
+          text={winner}
+          effect="gold"
+          style={{ fontSize: '120px' }}
+        />
+      ) : (
+        <BeautifulText
+          text="LUCK4YOU"
+          effect="party"
+          style={{ fontSize: '100px' }}
+        />
+      )}
+    </div>
+  );
+}
+```
+
+## Individual Component Examples
+
+### NeonText
+```tsx
+import { NeonText } from 'react-beautiful-text';
+
+<NeonText text="LUCK4YOU" style={{ fontSize: '80px' }} />
+```
+
+### GradientText
+```tsx
+import { GradientText } from 'react-beautiful-text';
+
+<GradientText
+  text="LUCK4YOU"
+  colors={["#40FFAA", "#4079FF", "#FFE740", "#FF40C0"]}
+  animationSpeed={2}
+  style={{ fontSize: '80px' }}
+/>
+```
+
+**Props:**
+- `text`: string (required, default: "LUCK4YOU")
+- `colors`: string[] (optional)
+- `animationSpeed`: number (optional)
+- `showBorder`: boolean (optional)
+- `style`: React.CSSProperties (optional)
+- `className`: string (optional)
+
+### FireText
+```tsx
+import { FireText } from 'react-beautiful-text';
+
+<FireText text="LUCK4YOU" style={{ fontSize: '80px' }} />
+```
+
+### GoldText
+```tsx
+import { GoldText } from 'react-beautiful-text';
+
+<GoldText text="LUCK4YOU" style={{ fontSize: '80px' }} />
+```
+
+### PartyText
+```tsx
+import { PartyText } from 'react-beautiful-text';
+
+<PartyText text="LUCK4YOU" style={{ fontSize: '80px' }} />
+```
+
+### CurvedLoopText
+```tsx
+import { CurvedLoopText } from 'react-beautiful-text';
+
+<CurvedLoopText
+  text="LUCK4YOU"
+  speed={2}
+  curveAmount={400}
+  direction="left"
+  interactive={true}
+  style={{ fontSize: '80px' }}
+/>
+```
+
+**Props:**
+- `text`: string (required, default: "LUCK4YOU")
+- `marqueeText`: string (optional)
+- `speed`: number (optional, default: 2)
+- `curveAmount`: number (optional, default: 400)
+- `direction`: 'left' | 'right' (optional, default: 'left')
+- `interactive`: boolean (optional, default: true)
+- `style`: React.CSSProperties (optional)
+- `className`: string (optional)
+
+## Common Props
+
+All components support these common props:
+
+- `text`: string (required, default: "LUCK4YOU")
+- `style`: React.CSSProperties (optional)
+- `className`: string (optional)
+
+## TypeScript
+
+Full TypeScript support with exported types:
+
+```tsx
+import type {
+  BeautifulTextProps,
+  EffectName,
+  EffectInfo,
+  // Individual component props
+  NeonTextProps,
+  GradientTextProps,
+  FireTextProps,
+  GoldTextProps,
+  PartyTextProps,
+  // ... and more
+} from 'react-beautiful-text';
+```
+
+## Browser Support
+
+Works in all modern browsers that support:
+- CSS animations
+- ES6+
+- React 18+
+
+## Use Cases
+
+- 🎰 Lucky draw applications
+- 🎉 Event announcements
+- 🎊 Celebration banners
+- 💎 Premium product showcases
+- 🎂 Birthday greetings
+- 📚 Educational platforms
+- 🎪 Event websites
+- 📱 Social media content
+
+## Credits
+
+Created with ❤️ by the React Beautiful Text team.
+
+Special thanks to **[Lucky4you - quaysotrungthuong.vn](https://quaysotrungthuong.vn/app)** - Professional lucky draw software for events.
+
+## License
+
+MIT
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## Repository
+
+https://github.com/t-code4change/react-beautiful-text
+
+## Support
+
+If you like this project, please give it a ⭐ on GitHub!

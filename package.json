@@ -1,6 +1,6 @@
 {
   "name": "react-beautiful-text",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "A collection of beautiful, animated text components for React",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -25,6 +25,7 @@
     "format:check": "prettier --check \"src/**/*.{ts,tsx,js,jsx,json,css,md}\"",
     "validate": "npm run typecheck && npm run test",
     "build": "npm run validate && tsup",
+    "build:skip-tests": "npm run typecheck && tsup",
     "dev": "tsup --watch",
     "prepublishOnly": "npm run build",
     "version": "npm run build && git add .",
