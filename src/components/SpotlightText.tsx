@@ -9,12 +9,11 @@ export interface SpotlightTextProps {
 
 export function SpotlightText({ text, style, className = "" }: SpotlightTextProps) {
   return (
-    <div className={`neon text-center ${className}`} style={{ fontSize: style?.fontSize }}>
-      <span className="text" data-text={text}>
+    <div className={`spotlight-neon ${className}`} style={style}>
+      <span className="spotlight-text" data-text={text}>
         {text}
       </span>
-      <span className="gradient" />
-      <span className="spotlight" />
+      <span className="spotlight-overlay" />
     </div>
   );
 }

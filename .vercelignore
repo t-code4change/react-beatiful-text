@@ -1,0 +1,10 @@
+src/
+node_modules/
+dist/
+.git/
+__tests__/
+*.test.ts
+*.test.tsx
+jest.config.js
+jest.setup.js
+__mocks__/

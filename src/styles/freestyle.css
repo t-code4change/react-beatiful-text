@@ -1,0 +1,64 @@
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@901&display=swap');
+
+.freestyle-container {
+  display: inline-block;
+  width: 100%;
+  max-width: 100%;
+  user-select: none;
+}
+
+.freestyle-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.freestyle-text {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+/* Animation for the colored rectangles */
+@keyframes freestyle-bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Additional wave effect */
+@keyframes freestyle-wave {
+  0%, 100% {
+    transform: translateY(0) scaleY(1);
+  }
+  50% {
+    transform: translateY(-15px) scaleY(1.1);
+  }
+}
+
+/* Color pulse animation */
+@keyframes freestyle-color-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Apply different animations to create variety */
+.freestyle-svg rect:nth-child(odd) {
+  animation: freestyle-bounce 1.2s ease-in-out infinite alternate !important;
+}
+
+.freestyle-svg rect:nth-child(even) {
+  animation: freestyle-wave 1.5s ease-in-out infinite alternate !important;
+}
+
+/* Add subtle color pulsing */
+.freestyle-svg rect {
+  animation-timing-function: ease-in-out;
+}

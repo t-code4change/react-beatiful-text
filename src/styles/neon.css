@@ -26,7 +26,5 @@
   100% { opacity: 1; text-shadow: 0 0 30px rgba(255,255,255,.6), 0 0 60px rgba(255,255,255,.45), 0 0 110px rgba(255,255,255,.25), 0 0 100px rgba(255,255,255,.1) }
 }
 
-html, body {
-  background-color: black;
-  font-family: 'Monoton', cursive;
-}
+/* Removed global font-family to allow custom fonts */
+/* Apply Monoton as fallback only if no font-family is specified in style prop */

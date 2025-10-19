@@ -7,7 +7,7 @@
 .teacherday-text {
   display: inline-block;
   font-weight: bold;
-  font-family: 'Georgia', serif;
+  /* font-family removed to allow custom fonts via style prop */
   background: linear-gradient(
     135deg,
     #1e3a8a 0%,

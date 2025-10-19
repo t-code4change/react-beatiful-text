@@ -1,9 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { GeistSans } from "geist/font/sans"
-import { GeistMono } from "geist/font/mono"
 import { Be_Vietnam_Pro } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import { FontProvider } from "@/lib/store"
 import "./globals.css"
@@ -32,11 +29,10 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="vi" className="dark">
-      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} ${beVietnamPro.variable}`}>
+    <html>
+      <body className={`font-sans ${beVietnamPro.variable}`}>
         <FontProvider>
           <Suspense fallback={null}>{children}</Suspense>
-          <Analytics />
         </FontProvider>
       </body>
     </html>

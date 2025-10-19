@@ -21,6 +21,18 @@ export const EFFECTS: EffectInfo[] = [
     description: "Smooth animated gradient",
     category: "basic",
   },
+    {
+        name: "freestyle",
+        label: "Freestyle",
+        description: "Colorful animated rectangles sliding within text",
+        category: "special",
+    },
+    {
+        name: "glowsparks",
+        label: "Glow Sparks",
+        description: "Sparkling particles emanating from glowing text",
+        category: "special",
+    },
   {
     name: "showgirl",
     label: "ShowGirl",
@@ -95,6 +107,7 @@ export const EFFECTS: EffectInfo[] = [
     description: "Festive party lights and sparkles",
     category: "event",
   },
+
 ];
 
 /**

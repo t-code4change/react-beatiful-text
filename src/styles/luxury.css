@@ -6,7 +6,7 @@
 .luxury-text {
   display: inline-block;
   font-weight: bold;
-  font-family: serif;
+  /* font-family removed to allow custom fonts via style prop */
   background: linear-gradient(
     135deg,
     #1a1a1a 0%,

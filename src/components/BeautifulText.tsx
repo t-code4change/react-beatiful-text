@@ -13,6 +13,8 @@ import { BirthdayText } from "./BirthdayText";
 import { WomanDayText } from "./WomanDayText";
 import { TeacherDayText } from "./TeacherDayText";
 import { PartyText } from "./PartyText";
+import { FreestyleText } from "./FreestyleText";
+import { GlowSparksText } from "./GlowSparksText";
 
 export type EffectName =
   | "neon"
@@ -28,7 +30,9 @@ export type EffectName =
   | "birthday"
   | "womanday"
   | "teacherday"
-  | "party";
+  | "party"
+  | "freestyle"
+  | "glowsparks";
 
 export interface BeautifulTextProps {
   text: string;
@@ -108,6 +112,10 @@ export function BeautifulText({
       return <TeacherDayText {...commonProps} />;
     case "party":
       return <PartyText {...commonProps} />;
+    case "freestyle":
+      return <FreestyleText {...commonProps} />;
+    case "glowsparks":
+      return <GlowSparksText {...commonProps} />;
     default:
       return <div {...commonProps}>{text}</div>;
   }

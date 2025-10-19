@@ -55,6 +55,12 @@ export type { TeacherDayTextProps } from './components/TeacherDayText';
 export { PartyText } from './components/PartyText';
 export type { PartyTextProps } from './components/PartyText';
 
+export { FreestyleText } from './components/FreestyleText';
+export type { FreestyleTextProps } from './components/FreestyleText';
+
+export { GlowSparksText } from './components/GlowSparksText';
+export type { GlowSparksTextProps } from './components/GlowSparksText';
+
 // Export CSS files
 import './styles/neon.css';
 import './styles/gradient.css';
@@ -70,3 +76,5 @@ import './styles/birthday.css';
 import './styles/womanday.css';
 import './styles/teacherday.css';
 import './styles/party.css';
+import './styles/freestyle.css';
+import './styles/glowsparks.css';

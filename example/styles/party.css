@@ -1,0 +1,112 @@
+.party-text-container {
+  display: inline-block;
+  position: relative;
+  padding: 40px 20px;
+}
+
+.party-text {
+  display: inline-block;
+  font-weight: bold;
+  position: relative;
+  z-index: 2;
+}
+
+.party-char {
+  display: inline-block;
+  background: linear-gradient(
+    45deg,
+    #ff0080 0%,
+    #ff8c00 20%,
+    #40e0d0 40%,
+    #9370db 60%,
+    #ff1493 80%,
+    #ffd700 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 300% 300%;
+  animation: party-disco 2s ease-in-out infinite, party-dance 0.5s ease-in-out infinite;
+  text-shadow:
+    2px 2px 4px rgba(255, 0, 128, 0.5),
+    -2px -2px 4px rgba(64, 224, 208, 0.5);
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.6));
+}
+
+.party-lights {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  pointer-events: none;
+}
+
+.light {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: party-blink 1s ease-in-out infinite;
+  box-shadow: 0 0 10px currentColor;
+}
+
+.party-sparkles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.sparkle {
+  position: absolute;
+  font-size: 20px;
+  animation: party-sparkle 2s ease-in-out infinite;
+  opacity: 0;
+}
+
+@keyframes party-disco {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes party-dance {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translateY(-5px) rotate(-3deg) scale(1.05);
+  }
+  75% {
+    transform: translateY(-3px) rotate(3deg) scale(1.05);
+  }
+}
+
+@keyframes party-blink {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+}
+
+@keyframes party-sparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5) rotate(180deg);
+  }
+}

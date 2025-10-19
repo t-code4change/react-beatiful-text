@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css?family=Permanent+Marker");
+
+.glow-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.1em;
+  font-family: "Permanent Marker", cursive;
+  background: transparent;
+  color: snow;
+  filter: brightness(1.3);
+}
+
+.glow-char {
+  animation: glow 2s ease-in-out both infinite;
+  text-shadow:
+    0 0 8px snow,
+    0 0 20px cyan,
+    0 0 40px yellow,
+    0 0 80px tomato;
+}
+
+@keyframes glow {
+  0%, 100% {
+    text-shadow:
+      0 0 10px #ffffff,
+      0 0 20px #40ffaa,
+      0 0 40px #4079ff,
+      0 0 80px #ff40c0,
+      0 0 100px #ffe740;
+    color: #40ffaa;
+  }
+  25% {
+    text-shadow:
+      0 0 10px #ffffff,
+      0 0 20px #ff40c0,
+      0 0 40px #ffe740,
+      0 0 80px #4079ff,
+      0 0 100px #40ffaa;
+    color: #ff40c0;
+  }
+  50% {
+    text-shadow:
+      0 0 10px #ffffff,
+      0 0 20px #ffe740,
+      0 0 40px #40ffaa,
+      0 0 80px #ff7a00,
+      0 0 100px #4079ff;
+    color: #ffe740;
+  }
+  75% {
+    text-shadow:
+      0 0 10px #ffffff,
+      0 0 20px #4079ff,
+      0 0 40px #ff7a00,
+      0 0 80px #40ffaa,
+      0 0 100px #ff40c0;
+    color: #4079ff;
+  }
+}
