@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-type EffectName = "neon" | "gradient" | "showgirl" | "glowing" | "spotlight" | "curved" | "fire" | "retro" | "gold" | "luxury" | "birthday" | "womanday" | "teacherday" | "party";
+type EffectName = "neon" | "gradient" | "showgirl" | "glowing" | "spotlight" | "curved" | "fire" | "retro" | "gold" | "luxury" | "birthday" | "womanday" | "teacherday" | "party" | "freestyle" | "glowsparks";
 interface BeautifulTextProps {
     text: string;
     effect: EffectName;
@@ -101,8 +101,9 @@ interface FireTextProps {
     text: string;
     style?: React.CSSProperties;
     className?: string;
+    particleCount?: number;
 }
-declare function FireText({ text, style, className }: FireTextProps): React.JSX.Element;
+declare function FireText({ text, style, className, particleCount }: FireTextProps): React.JSX.Element;
 
 interface RetroTextProps {
     text: string;
@@ -153,4 +154,19 @@ interface PartyTextProps {
 }
 declare function PartyText({ text, style, className }: PartyTextProps): React.JSX.Element;
 
-export { BeautifulText, type BeautifulTextProps, BirthdayText, type BirthdayTextProps, CurvedLoopText, type CurvedLoopTextProps, EFFECTS, type EffectInfo, type EffectName, FireText, type FireTextProps, GlowingText, type GlowingTextProps, GoldText, type GoldTextProps, GradientText, type GradientTextProps, LuxuryText, type LuxuryTextProps, NeonText, type NeonTextProps, PartyText, type PartyTextProps, RetroText, type RetroTextProps, ShowGirlText, type ShowGirlTextProps, SpotlightText, type SpotlightTextProps, TeacherDayText, type TeacherDayTextProps, WomanDayText, type WomanDayTextProps, getAllEffects, getAllEffectsInfo, getEffectInfo, getEffectsByCategory };
+interface FreestyleTextProps {
+    text: string;
+    style?: React.CSSProperties;
+    className?: string;
+}
+declare function FreestyleText({ text, style, className }: FreestyleTextProps): React.JSX.Element;
+
+interface GlowSparksTextProps {
+    text: string;
+    style?: React.CSSProperties;
+    className?: string;
+    fontSize?: number;
+}
+declare function GlowSparksText({ text, style, className, fontSize, }: GlowSparksTextProps): React.JSX.Element;
+
+export { BeautifulText, type BeautifulTextProps, BirthdayText, type BirthdayTextProps, CurvedLoopText, type CurvedLoopTextProps, EFFECTS, type EffectInfo, type EffectName, FireText, type FireTextProps, FreestyleText, type FreestyleTextProps, GlowSparksText, type GlowSparksTextProps, GlowingText, type GlowingTextProps, GoldText, type GoldTextProps, GradientText, type GradientTextProps, LuxuryText, type LuxuryTextProps, NeonText, type NeonTextProps, PartyText, type PartyTextProps, RetroText, type RetroTextProps, ShowGirlText, type ShowGirlTextProps, SpotlightText, type SpotlightTextProps, TeacherDayText, type TeacherDayTextProps, WomanDayText, type WomanDayTextProps, getAllEffects, getAllEffectsInfo, getEffectInfo, getEffectsByCategory };
